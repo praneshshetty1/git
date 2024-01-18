@@ -13,6 +13,10 @@ http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/cu
 	<db:config name="Database_Config" doc:name="Database Config" doc:id="45d5a7af-fbd0-40cf-b44d-dca47831601b" >
 		<db:my-sql-connection host="localhost" port="3306" user="root" password="pRanesh@1996" database="sys" />
 	</db:config>
+	<flow name="log" doc:id="43a48ad3-6a2f-485f-91ea-29e4b674bf12" >
+		<http:listener doc:name="Listener" doc:id="7468bdcc-b48c-40d7-b5de-eb720e3408d3" config-ref="HTTP_Listener_config" path="hi"/>
+		<logger level="INFO" doc:name="Logger" doc:id="b951e994-c472-44fd-bd8c-d12cd7f72d69" message="hi"/>
+	</flow>
 	<flow name="batchprocessFlow" doc:id="68b02639-181c-4512-b5ae-28c17c63c7a8" >
 		<http:listener doc:name="input" doc:id="883d61e7-3a23-4dae-b73e-2b65c12bc572" path="batchprocess" config-ref="HTTP_Listener_config"/>
 		<ee:transform doc:name="Transform Message" doc:id="bbed385f-f81f-49ef-984b-a6abc69f6d09" >
@@ -52,5 +56,6 @@ payload]]></ee:set-payload>
 				<logger level="INFO" doc:name="Logger" doc:id="55580940-aa5f-4ec4-99e3-74a01600f05d" message="#[payload]"/>
 			</batch:on-complete>
 		</batch:job>
-	</flow>
+	
+</flow>
 </mule>
