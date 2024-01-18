@@ -50,8 +50,9 @@ payload]]></ee:set-payload>
 					</ee:message>
 				</ee:transform>
 				<logger level="INFO" doc:name="Logger" doc:id="55580940-aa5f-4ec4-99e3-74a01600f05d" message="#[payload]"/>
-				<logger level="INFO" doc:name="Logger" doc:id="55580940-aa5f-4ec4-99e3-74a01600f05d" message="#[payload]"/>
-			</batch:on-complete>
+					</batch:on-complete>
 		</batch:job>
 	</flow>
 </mule>
+				
+		
